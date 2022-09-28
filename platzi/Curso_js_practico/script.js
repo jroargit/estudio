@@ -1,18 +1,14 @@
+const h1 = document.querySelector('h1');
+const form = document.querySelector('#form');
+const input1 = document.querySelector('#calculo1');
+const input2 = document.querySelector('#calculo2');
+const btn = document.querySelector('#btnCalcular');
+const pResult = document.querySelector('#result');
 
-const h1 = document.querySelector('h1')
-const p = document.querySelector('p')
-const pc = document.querySelector('.pc')
-const pid = document.querySelector('#pid')
-const input = document.querySelector('input')
-const img = document.createElement('img')
+btn.addEventListener('click', submit)
 
-h1.innerHTML = "Juan Roa"
-h1.innerText = "José Ruiz"
-console.log(h1.getAttribute("atributo"))
-h1.setAttribute("atrubito", "att2")
-p.classList.add("OtClase")
-p.classList.remove("pc")
-input.value = "texto en js"
-img.setAttribute("src", "img/Deadpool3.jpg")
-pid.innerHTML = ""
-pid.append(img)
+function submit(event) {
+    // event.preventDefault()
+    const sumaInputs = Number(input1.value) + Number(input2.value);
+    pResult.innerText = "Resultado: " + sumaInputs;
+}
